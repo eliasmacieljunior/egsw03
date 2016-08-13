@@ -3,11 +3,21 @@ app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$url
 	$stateProvider
 		.state('admin',{
 			url:'/admin',
-			templateUrl:'views/admin/navbar.html'
+			templateUrl:'views/admin/common.html'
 		})
-		.state('admin.home',{
-			url:'home',
-			templateUrl:'views/admin/home.html'
+		.state('admin.dashboard',{
+			url:'/dashboard',
+			templateUrl:'views/admin/dashboard.html'
+		})
+		
+		/**
+		 * Posts
+		 */
+		.state('admin.posts',{
+			url:'/posts',
+			templateUrl:'views/admin/post/list.html'
 		});
+
+		$urlRouterProvider.otherwise('admin/dashboard');
 
 }])
