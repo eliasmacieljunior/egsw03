@@ -9,13 +9,21 @@ app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$url
 			url:'/dashboard',
 			templateUrl:'views/admin/dashboard.html'
 		})
-		
+
 		/**
 		 * Posts
 		 */
 		.state('admin.posts',{
 			url:'/posts',
 			templateUrl:'views/admin/post/list.html'
+		})
+
+		/**
+		 * Category
+		 */
+		.state('admin.category',{
+			url:'/category',
+			templateUrl:'views/admin/category/list.html'
 		});
 
 		$urlRouterProvider.otherwise('admin/dashboard');
